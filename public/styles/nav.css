@@ -1,0 +1,22 @@
+nav {
+  background-color: #31468d;
+  color: #ffffff;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  height: 120px;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+#new-tweet-button {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+#logo {
+  font-family: "Bungee", sans-serif;
+  font-size: 36px;
+}
