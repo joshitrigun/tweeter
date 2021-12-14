@@ -14,6 +14,7 @@ nav {
 #new-tweet-button {
   color: white;
   background-color: transparent;
+  text-align: center;
   text-decoration: none;
 }
 #logo {
