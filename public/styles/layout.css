@@ -18,7 +18,7 @@ html {
 
 body {
   color: #ffff;
-  background-color: #f4f1ec;
+  background-color: #f8c777;
   font-size: 24px;
   font-family: "Source Sans Pro", sans-serif;
 }
@@ -31,11 +31,11 @@ main {
   margin: auto;
   width: 90%;
   position: relative;
-  top: 120px;
+  /* top: 120px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
 /* position: relative;
