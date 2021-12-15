@@ -1,0 +1,71 @@
+/* article .tweet-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+} */
+
+.tweet-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background-color: white;
+  color: black;
+  padding: 10px;
+  margin: 10px 0px 10px 0px;
+}
+.tweet-container:hover {
+  box-shadow: 3px 3px 3px grey;
+}
+.tweet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 20px;
+}
+.tweet-header-name {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.tweet-user-handle {
+  display: flex;
+  justify-content: flex-end;
+  opacity: 0.5;
+}
+.tweet-container hr {
+  height: 4px;
+  width: 100%;
+  border: none;
+}
+.tweet-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tweet-footer .fas {
+  color: rgb(128, 123, 118);
+}
+.tweet-footer .fas:hover {
+  color: rgb(170, 120, 77);
+}
+
+/* article .tweet-header div span {
+  font-size: 18px;
+  align-self: center;
+  font-weight: 300;
+}
+article div {
+  margin: 1em;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.tweet-footer div span {
+  font-size: 15px;
+}
+.tweet-reactions {
+  display: flex;
+  justify-content: space-between;
+} */

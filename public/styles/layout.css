@@ -28,11 +28,14 @@ body {
  */
 main {
   display: flex;
+  flex-direction: column;
   margin: auto;
   width: 90%;
-  position: relative;
+  justify-content: flex-start;
+
   /* top: 120px;
   display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: center;
   align-items: center; */
