@@ -3,30 +3,30 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-const tweetData = [
-  {
-    user: {
-      name: "Newton",
-      avatars: "https://i.imgur.com/73hZDYK.png",
-      handle: "@SirIsaac",
-    },
-    content: {
-      text: "If I have seen further it is by standing on the shoulders of giants",
-    },
-    created_at: 1639432668137,
-  },
-  {
-    user: {
-      name: "Descartes",
-      avatars: "https://i.imgur.com/nlhLi3I.png",
-      handle: "@rd",
-    },
-    content: {
-      text: "Je pense , donc je suis",
-    },
-    created_at: 1639519068137,
-  },
-];
+// const tweetData = [
+//   {
+//     user: {
+//       name: "Newton",
+//       avatars: "https://i.imgur.com/73hZDYK.png",
+//       handle: "@SirIsaac",
+//     },
+//     content: {
+//       text: "If I have seen further it is by standing on the shoulders of giants",
+//     },
+//     created_at: 1639432668137,
+//   },
+//   {
+//     user: {
+//       name: "Descartes",
+//       avatars: "https://i.imgur.com/nlhLi3I.png",
+//       handle: "@rd",
+//     },
+//     content: {
+//       text: "Je pense , donc je suis",
+//     },
+//     created_at: 1639519068137,
+//   },
+// ];
 
 const createTweetElement = (tweetData) => {
   const newTweet = $("<article>").addClass("tweet-container");
@@ -64,11 +64,32 @@ const createTweetElement = (tweetData) => {
 
 const renderTweets = function (tweetData) {
   $("#tweet-container-id").empty();
-  for (let twee of tweetData) {
-    $("#tweet-container-id").prepend(createTweetElement(twee));
+  for (let tweet of tweetData) {
+    $("#tweet-container-id").prepend(createTweetElement(tweet));
   }
 };
 
-$(document).ready(() => {
-  renderTweets(tweetData);
+$(document).ready(function () {
+  fetchTweets();
+  $(".tweetForm").submit(function (e) {
+    e.preventDefault();
+    const tweetFormData = $(this).serialize();
+    $.ajax({
+      type: "POST",
+      url: "http://localhost:8080/tweets/",
+      data: tweetFormData,
+      success: () => {
+        fetchTweets();
+      },
+    });
+  });
 });
+const fetchTweets = () => {
+  $.ajax({
+    type: "GET",
+    url: "http://localhost:8080/tweets/",
+    success: (data) => {
+      renderTweets(data);
+    },
+  });
+};
