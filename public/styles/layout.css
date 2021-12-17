@@ -26,24 +26,26 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+.responsive-top {
+  display: flex;
+  flex-direction: column;
+  margin-top: 120px;
+}
 main {
   display: flex;
   flex-direction: column;
   margin: auto;
   width: 90%;
   justify-content: flex-start;
-
-  /* top: 120px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
+  padding: 16px;
 }
-
-/* position: relative;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-padding-top: 120px;
-box-sizing: content-box; */
+@media screen and (min-width: 1024px) {
+  main {
+    flex-direction: column;
+  }
+  .responsive-top {
+    display: flex;
+    flex-direction: row;
+    margin-top: 120px;
+  }
+}

@@ -69,37 +69,41 @@
         <i class="fas fa-angle-double-down"></i>
       </a>
     </nav>
-    <header class="page-header">
-      <div>
-        <img src="/images/profile-hex.png" />
-      </div>
-      <br />
-      <div>
-        <h2>Joshi</h2>
-      </div>
-    </header>
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
+    <div class="responsive-top">
+      <header class="page-header">
         <div>
-          <h1 class="error-message1">Text over head. Cannot submit tweet</h1>
-          <h1 class="error-message2">No text. Cannot submit tweet</h1>
+          <img src="/images/profile-hex.png" />
         </div>
-        <form class="tweetForm" method="POST" action="/tweets/">
-          <label for="tweet-text"></label>
-          <textarea
-            name="text"
-            id="tweet-text"
-            placeholder="What are you humming about?"
-          ></textarea>
+        <br />
+        <div>
+          <h2>Joshi</h2>
+        </div>
+      </header>
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+          <h2>Compose Tweet</h2>
           <div>
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+            <h1 class="error-message1">Text over head. Cannot submit tweet</h1>
+            <h1 class="error-message2">No text. Cannot submit tweet</h1>
           </div>
-        </form>
-      </section>
-      <section id="tweet-container-id">Trigun</section>
-    </main>
+          <form class="tweetForm" method="POST" action="/tweets/">
+            <label for="tweet-text"></label>
+            <textarea
+              name="text"
+              id="tweet-text"
+              placeholder="What are you humming about?"
+            ></textarea>
+            <div>
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text"
+                >140</output
+              >
+            </div>
+          </form>
+        </section>
+        <section id="tweet-container-id">Trigun</section>
+      </main>
+    </div>
   </body>
 </html>

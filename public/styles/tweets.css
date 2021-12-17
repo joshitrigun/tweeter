@@ -1,10 +1,3 @@
-/* article .tweet-container {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  width: 100%;
-} */
-
 .tweet-container {
   display: flex;
   flex-direction: column;
@@ -50,22 +43,3 @@
 .tweet-footer .fas:hover {
   color: rgb(170, 120, 77);
 }
-
-/* article .tweet-header div span {
-  font-size: 18px;
-  align-self: center;
-  font-weight: 300;
-}
-article div {
-  margin: 1em;
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.tweet-footer div span {
-  font-size: 15px;
-}
-.tweet-reactions {
-  display: flex;
-  justify-content: space-between;
-} */
