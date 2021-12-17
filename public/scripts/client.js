@@ -30,6 +30,12 @@
 
 // creates html for a tweet given the data
 const createTweetElement = (tweetData) => {
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const newTweet = $("<article>").addClass("tweet-container");
   newTweet.append(`
   
@@ -43,7 +49,7 @@ const createTweetElement = (tweetData) => {
           </div>
         </header>
         <div>
-          <span>${tweetData.content.text}</span>
+          <span>${escape(tweetData.content.text)}</span>
         </div>
         <hr />
         <footer class="tweet-footer">
@@ -77,22 +83,24 @@ $(document).ready(function () {
   $(".tweetForm").submit(function (e) {
     e.preventDefault();
     const tweetChar = $("#tweet-text").val().length;
-    console.log(tweetChar);
+
     if (tweetChar > 140) {
-      return alert("your tweet is too long");
+      $(".error-message1").slideDown(1000);
     } else if (tweetChar === 0) {
-      return alert("Please enter something");
+      $(".error-message2").slideDown(1000);
+    } else {
+      const tweetFormData = $(this).serialize();
+      console.log(tweetFormData);
+      $.ajax({
+        type: "POST",
+        url: "http://localhost:8080/tweets/",
+        data: tweetFormData,
+        success: () => {
+          loadTweets();
+        },
+      });
+      $("#tweet-text").val("");
     }
-    const tweetFormData = $(this).serialize();
-    console.log(tweetFormData);
-    $.ajax({
-      type: "POST",
-      url: "http://localhost:8080/tweets/",
-      data: tweetFormData,
-      success: () => {
-        loadTweets();
-      },
-    });
   });
 });
 //fetches tweets and renders to page

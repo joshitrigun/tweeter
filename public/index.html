@@ -82,6 +82,10 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
+        <div>
+          <h1 class="error-message1">Text over head. Cannot submit tweet</h1>
+          <h1 class="error-message2">No text. Cannot submit tweet</h1>
+        </div>
         <form class="tweetForm" method="POST" action="/tweets/">
           <label for="tweet-text"></label>
           <textarea

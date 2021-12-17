@@ -42,3 +42,12 @@
 .overCharCount {
   color: red;
 }
+
+.error-message1 {
+  color: red;
+  display: none;
+}
+.error-message2 {
+  color: rgb(255, 0, 0);
+  display: none;
+}
