@@ -28,6 +28,7 @@
 //   },
 // ];
 
+// creates html for a tweet given the data
 const createTweetElement = (tweetData) => {
   const newTweet = $("<article>").addClass("tweet-container");
   newTweet.append(`
@@ -62,6 +63,7 @@ const createTweetElement = (tweetData) => {
   return newTweet;
 };
 
+// given a collection of tweets renders them to the page
 const renderTweets = function (tweetData) {
   $("#tweet-container-id").empty();
   for (let tweet of tweetData) {
@@ -69,22 +71,32 @@ const renderTweets = function (tweetData) {
   }
 };
 
+// handle new tweet submission
 $(document).ready(function () {
-  fetchTweets();
+  loadTweets();
   $(".tweetForm").submit(function (e) {
     e.preventDefault();
+    const tweetChar = $("#tweet-text").val().length;
+    console.log(tweetChar);
+    if (tweetChar > 140) {
+      return alert("your tweet is too long");
+    } else if (tweetChar === 0) {
+      return alert("Please enter something");
+    }
     const tweetFormData = $(this).serialize();
+    console.log(tweetFormData);
     $.ajax({
       type: "POST",
       url: "http://localhost:8080/tweets/",
       data: tweetFormData,
       success: () => {
-        fetchTweets();
+        loadTweets();
       },
     });
   });
 });
-const fetchTweets = () => {
+//fetches tweets and renders to page
+const loadTweets = () => {
   $.ajax({
     type: "GET",
     url: "http://localhost:8080/tweets/",

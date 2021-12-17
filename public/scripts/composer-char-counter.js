@@ -5,6 +5,7 @@ $(document).ready(function () {
     const updatedLength = 140 - $(this).val().length;
     const $output = $("output");
     if (updatedLength < 0) {
+      
       $output.addClass("overCharCount");
     } else {
       $output.removeClass("overCharCount");
