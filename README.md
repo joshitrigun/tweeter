@@ -16,3 +16,18 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+
+##Project Stack
+--- HTML, CSS, JS, jQuery and AJAX on the client-side
+---Node and Express on the server-side
+
+##Project Features
+--new tweets are posted with no delay
+--tweets are displayed in reverse chronological order
+--character counter and tweets length validation
+--error message if 140 char limit is exceeded or tweet-box blank
+--responsive design for an optimized user experience
+--fading toggle button appearing when scrolling down to bring the user back up to the top of the page
+
+##Final Product
