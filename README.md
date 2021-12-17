@@ -31,3 +31,5 @@ This repository is the starter code for the project: Students will fork and clon
 --fading toggle button appearing when scrolling down to bring the user back up to the top of the page
 
 ##Final Product
+![image](https://user-images.githubusercontent.com/15637663/146616717-357aa9c9-264e-4a28-951d-a1c0e87e295e.png)
+![image](https://user-images.githubusercontent.com/15637663/146616759-5b96a96e-c980-4852-9e2b-8ebce50eb565.png)
