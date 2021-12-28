@@ -19,7 +19,9 @@ nav {
   text-align: center;
   text-decoration: none;
 }
-
+.fas {
+  color: orange;
+}
 #logo {
   font-family: "Bungee", sans-serif;
   font-size: 36px;
